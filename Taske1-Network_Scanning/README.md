@@ -4,6 +4,19 @@
 
 The objective of this project is to scan a local system using Nmap and identify open ports, closed ports, and running network services.
 
+## Installation
+
+1. Download and install Nmap from the official Nmap website.
+2. Install Npcap when prompted during the installation.
+3. Open Windows PowerShell.
+4. Verify the installation using the following command:
+
+```powershell
+nmap --version
+```
+
+The installed Nmap version used in this project was Nmap 7.991.
+
 ## Tools Used
 
 - Nmap
