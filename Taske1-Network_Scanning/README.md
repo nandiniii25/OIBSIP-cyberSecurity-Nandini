@@ -11,6 +11,16 @@ and which services are available.
 
 The objective of this project is to scan a local system using Nmap and identify open ports, closed ports, and running network services.
 
+## Importance of Network Scanning
+
+Network scanning is important for identifying open ports and running services
+on a system. It helps security professionals detect unnecessary services,
+understand network exposure, and improve system security.
+
+Regular scanning can help identify potential security risks and support
+better firewall and access-control decisions.
+
+
 ## Installation
 
 1. Download and install Nmap from the official Nmap website.
@@ -104,6 +114,14 @@ The project includes screenshots of:
 ## Ethical Scanning Note
 
 The scan was performed on localhost (127.0.0.1), which is the user's own system. No external or unauthorized system was scanned.
+
+## Ethical Use Guidelines
+
+- Scan only systems that you own or have permission to test.
+- Do not scan external or unauthorized systems.
+- Use Nmap only for legal and educational purposes.
+- Avoid aggressive scanning that may affect system performance.
+- Keep scan results confidential and use them responsibly.
 
 ## Conclusion
 
