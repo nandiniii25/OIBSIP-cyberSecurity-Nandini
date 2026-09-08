@@ -1,56 +1,90 @@
-# Basic Network Scanning with Nmap
-
-## About the Project
-This project is part of my OIBSIP Cybersecurity Internship. I used Nmap to learn the basics of network scanning and understand open ports and running services on my own computer.
+# Network Scanning Using Nmap
 
 ## Objective
-To learn how Nmap works and perform basic network scanning on a local system.
+
+The objective of this project is to scan a local system using Nmap and identify open ports, closed ports, and running network services.
 
 ## Tools Used
+
 - Nmap
 - Windows PowerShell
-- Windows 11
+- GitHub
 
-## Installation
-I downloaded Nmap from the official website and installed it on my Windows system.
+## Target System
 
-During installation, I also installed Npcap when prompted.
+Target: localhost  
+IP Address: 127.0.0.1
 
-I checked the installation using the Nmap version command.
+The scan was performed only on the user's own system.
 
-## Tasks Performed
+## Commands Used
 
-### 1. Basic Network Scan
-I scanned my local computer using:
+### 1. Basic Scan
 
-nmap 127.0.0.1
-
-This helped me identify open and closed ports on my system.
+```powershell
+& "C:\Program Files (x86)\Nmap\nmap.exe" 127.0.0.1
+```
 
 ### 2. Service Version Detection
-I used:
 
-nmap -sV 127.0.0.1
+```powershell
+& "C:\Program Files (x86)\Nmap\nmap.exe" -sV 127.0.0.1
+```
 
-This helped me understand which services were running on the open ports.
+### 3. Operating System Detection
 
-### 3. OS Detection
-I used:
+```powershell
+& "C:\Program Files (x86)\Nmap\nmap.exe" -O 127.0.0.1
+```
 
-nmap -O 127.0.0.1
+## Scan Results
 
-This helped me learn how Nmap attempts to identify the operating system.
+The Nmap scan showed that the host was up.
 
-## Results
-The scans helped me understand basic network scanning, open ports, running services, and operating system detection.
+The scan identified:
 
-The scan results are saved in text files inside this project folder.
+- 3 open TCP ports
+- 997 closed TCP ports
+
+### Open Ports
+
+| Port | State | Service |
+|------|-------|---------|
+| 135/tcp | Open | MSRPC |
+| 445/tcp | Open | Microsoft-DS |
+| 16992/tcp | Open | AMT-SOAP-HTTP |
+
+## Open Ports Analysis
+
+### Port 135/tcp – MSRPC
+
+This port is used by Microsoft Remote Procedure Call (MSRPC). It allows Windows services and applications to communicate with each other. If exposed to an untrusted network, it may increase security risks.
+
+### Port 445/tcp – Microsoft-DS
+
+This port is commonly used for Windows file and printer sharing through SMB. It should be restricted to trusted networks because exposed SMB services may be targeted by attackers.
+
+### Port 16992/tcp – AMT-SOAP-HTTP
+
+This port is associated with Intel Active Management Technology (Intel AMT). It is used for remote management and system administration. It should be properly secured and accessible only to authorized users.
+
+## Security Observation
+
+The scan identified 3 open TCP ports and 997 closed TCP ports. Open ports should be reviewed regularly. Unnecessary services should be disabled, and required services should be protected using a firewall.
 
 ## Screenshots
-The Screenshots folder contains the screenshots of the Nmap scans.
+
+The project includes screenshots of:
+
+- Nmap basic scan
+- Nmap service version scan
+- Nmap operating system detection
+- Nmap scan results
+
+## Ethical Scanning Note
+
+The scan was performed on localhost (127.0.0.1), which is the user's own system. No external or unauthorized system was scanned.
 
 ## Conclusion
-Through this task, I learned how to install Nmap and perform basic network scanning using PowerShell. I also gained a basic understanding of ports, services, and operating system detection.
 
-## Disclaimer
-This scan was performed only on my own local computer for educational purposes.
+The scan helped identify the services running on the localhost system. This information can be used to improve network security, review open services, and reduce unnecessary network exposure.
