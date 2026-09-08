@@ -1,4 +1,11 @@
 # Network Scanning Using Nmap
+## What is Nmap?
+
+Nmap stands for Network Mapper. It is an open-source tool used to discover
+hosts, scan network ports, and identify running services.
+
+Nmap helps security professionals understand which ports are open on a system
+and which services are available.
 
 ## Objective
 
